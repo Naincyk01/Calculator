@@ -21,7 +21,6 @@ let screenInput = document.getElementById("screen-input")
 let answer = document.getElementById("answer")
 
 function displayScreen(value){
-    // console.log("write")//to change whether it work or not
     // screenInput.innerText=value //value is displaying lekin vo jo value phele display h usko hata ke aara h isliye append use karenge
     let span = document.createElement("span")
     span.innerHTML=value
@@ -36,9 +35,8 @@ function DeleteOne(){
     let newscreenInput = previous.substring(0,previous.length-1)
     screenInput.innerText=newscreenInput
 }
-function EqualOperation(x){
-// let expression = screenInput.innerText
-answer.innerText=eval(x)
+function EqualOperation(expression){
+answer.innerText=eval(expression)
 }
 but7.addEventListener("click",function(){
     displayScreen("7")
@@ -90,6 +88,7 @@ butmodulus.addEventListener("click",function(){
 });
 butAC.addEventListener("click",function(){
     ClearIt()
+    window.location.reload()
 });
 butdel.addEventListener("click",function(){
     DeleteOne()
@@ -97,3 +96,6 @@ butdel.addEventListener("click",function(){
 butequal.addEventListener("click",function(){
     EqualOperation(screenInput.innerText)
 });
+
+
+
